@@ -1,0 +1,18 @@
+#Task:
+Given a string s, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
+
+#Input:
+s = "A man, a plan, a canal: Panama"
+s = "race a car"
+
+#Output:
+true
+Explanation: "amanaplanacanalpanama" is a palindrome.
+false
+Explanation: "raceacar" is not a palindrome.
+
+#Solution:
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        s=''.join([e for e in s if e.isalnum()]).lower()
+        return s==s[::-1]
