@@ -1,0 +1,29 @@
+#Task:
+Given the head of a singly linked list, return true if it is a palindrome.
+
+#Input:
+
+Input: head = [1,2,2,1]
+Output: true
+
+Input: head = [1,2]
+Output: false
+
+#Solution:
+class Solution:
+    def isPalindrome(self, head: ListNode) -> bool:
+        nums = []
+        
+        while head:
+            nums.append(head.val)
+            head = head.next
+            
+        l, r = 0, len(nums) - 1
+        while l <= r:
+            if nums[l] != nums[r]:
+                return False
+            l += 1
+            r -= 1
+            
+        return True     
+        
